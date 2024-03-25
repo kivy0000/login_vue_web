@@ -12,9 +12,9 @@ import java.util.logging.Logger;
 /**
  * @author kivy0000
  * @version 1.0
+ * This class is used for Mail Util utility class initialization，You can also use mail Starter's native method instead
  * -
- * This class is used for Mail Util utility class initialization
- * 这个类用于MailUtil工具类的初始化
+ * 这个类用于MailUtil工具类的初始化,你也可以使用mailStarter的原生方法替代它
  */
 @Configuration
 @ConfigurationProperties(prefix = "mailutil")
