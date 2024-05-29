@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * @author kivy0000
  * @version 1.0
+ * 用于提供验证码服务
  */
 @RestController
 public class VcodeController {

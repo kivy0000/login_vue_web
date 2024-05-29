@@ -1,9 +1,6 @@
 package com.kivy0000.login_web.utils;
 
 
-import net.bytebuddy.asm.Advice;
-import org.junit.jupiter.api.Timeout;
-
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -26,7 +23,6 @@ import java.util.logging.Logger;
  * 3.目前支持126，QQ，163,gmail,sina,sohu邮箱的smtp协议
  */
 @SuppressWarnings("unused")
-//@Deprecated
 public class MailUtil {
 
     //初始化通用的配置属性

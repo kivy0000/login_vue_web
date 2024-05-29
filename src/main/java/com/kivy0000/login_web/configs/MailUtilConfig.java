@@ -17,6 +17,7 @@ import java.util.logging.Logger;
  * 这个类用于MailUtil工具类的初始化,你也可以使用mailStarter的原生方法替代它
  */
 @Configuration
+//@EnableConfigurationProperties
 @ConfigurationProperties(prefix = "mailutil")
 public class MailUtilConfig {
     public String defaultSender;
@@ -26,11 +27,15 @@ public class MailUtilConfig {
     public void init() {
         MailUtil.setDefaultSender(defaultSender);
         MailUtil.setDefaultPassword(defaultPassword);
-        /*Check the null pointer exception in advance to prevent service module problems*/
+        /* Check the null pointer exception in advance to prevent service module problems*/
         if (StringUtils.isNullOrEmpty(MailUtil.getDefaultSender())
                 || StringUtils.isNullOrEmpty(MailUtil.getDefaultPassword())) {
-            Logger.getGlobal().log(Level.SEVERE, "ATTENTION: DefaultSender and DefaultPassword of MailUtil failed to be initialized, please check the configuration file");
-            throw new RuntimeException("ATTENTION: DefaultSender and DefaultPassword of MailUtil failed to be initialized, please check the configuration file");
+            Logger.getGlobal().log(Level.SEVERE,
+                    "注意:MailUtil的DefaultSender和DefaultPassword初始化失败，请检查配置文件\n" +
+                            "ATTENTION: DefaultSender and DefaultPassword of MailUtil failed to be initialized, please check the configuration file");
+            throw new RuntimeException
+                    ("ATTENTION: DefaultSender and DefaultPassword of MailUtil failed to be initialized, please check the configuration file\n" +
+                            "注意:MailUtil的DefaultSender和DefaultPassword初始化失败，请检查配置文件");
         }
     }
 
